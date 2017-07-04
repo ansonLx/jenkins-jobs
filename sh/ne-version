@@ -1,0 +1,4 @@
+prod_build=2.3.0.52
+prod_branch=rc-2.3
+dev_build=3.2.0.46
+dev_branch=develop
