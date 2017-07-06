@@ -1,6 +1,7 @@
 def getLabelNum(version){
     def vs = version.split(",")
-    
+    println(version)
+    println(vs)
     return "" + vs[0] + vs[1]
 }
 
