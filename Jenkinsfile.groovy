@@ -1,8 +1,5 @@
 def getLabelNum(version){
     def vs = version.split("\\.")
-    println(version)
-    println(vs.length)
-    println(vs.size())
     return "" + vs[0] + vs[1]
 }
 
@@ -18,6 +15,12 @@ def getLabel(label_list, geo_v, ns_v, ne_v){
         def nsv = ls[1]
         def nev = ls[2]
         if(gv != geo_v && nsv != ns_v && nev != ne_v){
+            println gv
+            println geo_v
+            println nsv
+            println ns_v
+            println nev
+            println ne_v
             label_collection = label_collection + getLabelStr(gv, nsv, nev)
         }
     }
@@ -78,7 +81,7 @@ node {
                 string(name: 'geo_version', value: "${geo_prod_build}"),
                 string(name: 'ne_version', value: "${dev_build}"),
                 string(name: 'ns_version', value: "${prod_build}"),
-                string(name: 'label', value: "${test_label}")]
+                string(name: 'test_label', value: "${test_label}")]
     }
 
     stage ("deploy geo_version->${geo_prod_build} ns_version->${dev_build} ne_version->${dev_build}") {
@@ -93,6 +96,6 @@ node {
                 string(name: 'geo_version', value: "${geo_prod_build}"),
                 string(name: 'ne_version', value: "${dev_build}"),
                 string(name: 'ns_version', value: "${dev_build}"),
-                string(name: 'label', value: "${test_label}")]
+                string(name: 'test_label', value: "${test_label}")]
     }
 }
