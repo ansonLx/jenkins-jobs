@@ -2,3 +2,5 @@ prod_build=2.3.0.52
 prod_branch=rc-2.3
 dev_build=3.2.0.46
 dev_branch=develop
+geo_prod_build=2.3.0.35
+geo_dev_build=3.2.0.13
