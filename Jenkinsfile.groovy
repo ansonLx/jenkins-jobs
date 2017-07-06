@@ -1,5 +1,5 @@
 def getLabelNum(version){
-    def vs = version.split(".")
+    def vs = version.split("\\.")
     println(version)
     println(vs.length)
     println(vs.size())
