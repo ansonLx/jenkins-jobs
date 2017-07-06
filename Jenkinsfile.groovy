@@ -1,7 +1,5 @@
 def getLabelNum(version){
-    def vs = version.split(",")
-    println(version)
-    println(vs)
+    def vs = version.split(".")
     return "" + vs[0] + vs[1]
 }
 
@@ -51,8 +49,6 @@ node {
         dev_branch = sh(script: 'cat ./sh/ne-version | grep "^dev_branch=" | sed "s/^dev_branch=//"', returnStdout: true).trim()
         geo_prod_build = sh(script: 'cat ./sh/ne-version | grep "^geo_prod_build=" | sed "s/^geo_prod_build=//"', returnStdout: true).trim()
         geo_dev_build = sh(script: 'cat ./sh/ne-version | grep "^geo_dev_build=" | sed "s/^geo_dev_build=//"', returnStdout: true).trim()
-
-        echo "${prod_build}, ${dev_build}, ${geo_prod_build}, ${geo_dev_build}"
 
         label_list = label_list + (getLabelNum(geo_prod_build) + "-" + getLabelNum(prod_build) + "-" + getLabelNum(dev_build))
 //        label_list = label_list + (getLabelNum(geo_prod_build) + "-" + getLabelNum(prod_build) + "-" + getLabelNum(prod_build))
