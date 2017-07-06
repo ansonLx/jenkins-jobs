@@ -73,7 +73,7 @@ node {
         def test_label = getLabel(label_list, geo_prod_build, dev_build, prod_build)
         echo "run test job geo-version: ${geo_prod_build} ns-version: ${dev_build} ne-version: ${prod_build} label: ${test_label}"
 
-        build job: 'run test job 01', parameters: [
+        build job: 'run test job 01', propagate: false, parameters: [
                 string(name: 'geo_version', value: "${geo_prod_build}"),
                 string(name: 'ne_version', value: "${dev_build}"),
                 string(name: 'ns_version', value: "${prod_build}"),
@@ -88,7 +88,7 @@ node {
         def test_label = getLabel(label_list, geo_prod_build, dev_build, dev_build)
         echo "run test job geo-version: ${geo_prod_build} ns-version: ${dev_build} ne-version: ${dev_build} label: ${test_label}"
 
-        build job: 'run test job 01', parameters: [
+        build job: 'run test job 01', propagate: false, parameters: [
                 string(name: 'geo_version', value: "${geo_prod_build}"),
                 string(name: 'ne_version', value: "${dev_build}"),
                 string(name: 'ns_version', value: "${dev_build}"),
