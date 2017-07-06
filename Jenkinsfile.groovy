@@ -14,13 +14,7 @@ def getLabel(label_list, geo_v, ns_v, ne_v){
         def gv = ls[0]
         def nsv = ls[1]
         def nev = ls[2]
-        if(gv != geo_v && nsv != ns_v && nev != ne_v){
-            println gv
-            println geo_v
-            println nsv
-            println ns_v
-            println nev
-            println ne_v
+        if(gv != getLabelNum(geo_v) && nsv != getLabelNum(ns_v) && nev != getLabelNum(ne_v)){
             label_collection = label_collection + getLabelStr(gv, nsv, nev)
         }
     }
