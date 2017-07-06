@@ -1,6 +1,4 @@
-
 node {
-    agent 123qwe
     def env = "qa2"
     def prod_build
     def prod_branch
